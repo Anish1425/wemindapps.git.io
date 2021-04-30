@@ -22,7 +22,7 @@ class TodoController extends Controller
         ]);
         $todo = $request->title;
         Todo::create(['title' => $todo]);
-        return redirect()->back()->with('success', "TODO created successfully!");
+        return redirect()->back()->with('success', "Task created successfully!");
     }
 
     public function edit($id){
@@ -36,23 +36,23 @@ class TodoController extends Controller
         ]);
         $updateTodo = Todo::find($request->id);
         $updateTodo->update(['title' => $request->title]);
-        return redirect('/index')->with('success', "TODO updated successfully!");
+        return redirect('/index')->with('success', "Task updated successfully!");
     }
 
     public function completed($id){
         $todo = Todo::find($id);
         if ($todo->completed){
             $todo->update(['completed' => false]);
-            return redirect()->back()->with('success', "TODO marked as incomplete!");
+            return redirect()->back()->with('success', "Task marked as incomplete!");
         }else {
             $todo->update(['completed' => true]);
-            return redirect()->back()->with('success', "TODO marked as complete!");
+            return redirect()->back()->with('success', "Task marked as complete!");
         }
     }
 
     public function delete($id){
         $todo = Todo::find($id);
         $todo->delete();
-        return redirect()->back()->with('success', "TODO deleted successfully!"); 
+        return redirect()->back()->with('success', "Task deleted successfully!"); 
     }
 }
