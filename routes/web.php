@@ -22,6 +22,15 @@ Route::get('/index', [TodoController::class, 'index']);
 Route::get('/create', [TodoController::class, 'create']);
 Route::post('/upload', [TodoController::class, 'upload']);
 Route::get('/{id}/edit', [TodoController::class, 'edit']);
+Route::get('/{id}/sub_task', [TodoController::class, 'subedit']);
+Route::post('/subupload', [TodoController::class, 'subupload']);
+Route::post('/subupdate', [TodoController::class, 'subupdate']);
+
+Route::get('/{id}/sub_view', [TodoController::class, 'sub_view']);
+
+
+
 Route::patch('/update', [TodoController::class, 'update']);
 Route::get('/{id}/completed', [TodoController::class, 'completed']);
 Route::get('/{id}/delete', [TodoController::class, 'delete']);
+Route::get('/{id}/sub_delete', [TodoController::class, 'sub_delete']);

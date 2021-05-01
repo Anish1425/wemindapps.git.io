@@ -49,6 +49,11 @@
             <a class="btn btn-success" href="{{asset('/' . $todo->id . '/edit')}}">Edit</a>
             <a class="btn btn-primary" href="{{asset('/' . $todo->id . '/completed')}}">Completed</a>
             <a class="btn btn-warning" href="{{asset('/' . $todo->id . '/delete')}}">Delete</a>
+            <a class="btn btn-danger" href="{{asset('/' . $todo->id . '/sub_task')}}">Add Sub Tasks</a>
+            <a class="btn btn-info" href="{{asset('/' . $todo->id . '/sub_view')}}">View SubTasks</a>
+      <!--      <a class="btn btn-dark" href="{{asset('/' . $todo->id . '/sub_delete')}}">Delete SubTasks</a>-->
+
+
             </td>
         </tr>
     @endforeach

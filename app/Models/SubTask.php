@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Todo extends Model
+class SubTask extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'title',
-        'completed'
-    ];
+    protected $table='tbl_subtask';
 
+    //protected $guarded = ['task_id'];
 
 }
